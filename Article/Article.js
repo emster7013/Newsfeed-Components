@@ -88,6 +88,7 @@ const data = [
   }
 ];
 
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -112,3 +113,53 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+//THIS IS STEP 5
+data.push({
+  title: 'Emily Gauthier',
+  date: "03/14/1996",
+  firstParagraph: 'Welcome to the First Paragraph, you`ve been blessed',
+  secondParagraph: 'This is the second paragraph and now you`re getting bored wit this',
+  thirdParagraph: 'This is the third paragrapgh and I see you`ve made it this long so CONGRATULATIONS... NOT'
+})
+
+
+function articleHome(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  //elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const dates = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(dates);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(button);
+
+  articleTitle.textContent = title;
+  dates.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+ 
+  button.textContent = 'Expand';
+
+  article.classList.add('article');
+  dates.classList.add('date');
+  button.classList.add('expandButton');
+
+  button.addEventListener('click', () =>{
+    article.classList.toggle('article-open');
+});
+return article;
+};
+
+const article = document.querySelector('.articles');
+data.forEach(arti => {
+  console.log(arti.title);
+  article.appendChild(articleHome(arti.title, arti.date, arti.firstParagraph, arti.secondParagraph, arti.thirdParagraph));
+});
