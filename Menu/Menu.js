@@ -50,7 +50,6 @@ function Menuitems(){
     itemsMenu.classList.toggle('menu--open')
   });
   return itemsMenu;
-  
 };
 const headers = document.querySelector('.header');
 const menu = document.querySelector('.menu-button');

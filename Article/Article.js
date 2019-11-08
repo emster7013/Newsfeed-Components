@@ -88,6 +88,7 @@ const data = [
   }
 ];
 
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -112,6 +113,16 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+//THIS IS STEP 5
+data.push({
+  title: 'Emily Gauthier',
+  date: "03/14/1996",
+  firstParagraph: 'Welcome to the First Paragraph, you`ve been blessed',
+  secondParagraph: 'This is the second paragraph and now you`re getting bored wit this',
+  thirdParagraph: 'This is the third paragrapgh and I see you`ve made it this long so CONGRATULATIONS... NOT'
+})
+
+
 function articleHome(title, date, firstParagraph, secondParagraph, thirdParagraph){
   //elements
   const article = document.createElement('div');
